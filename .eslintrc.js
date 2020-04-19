@@ -23,8 +23,9 @@ module.exports = {
     env: {
         browser: true,
     },
+    extends: ['standard'],
     plugins: [
-       // 'html' // 使用eslint-plugin-html
+        'html'
     ],
     rules : {
         // 定义对象的set存取器属性时，强制定义get

@@ -1,13 +1,23 @@
-var path = require('path');
+const  path = require('path');
 
-var config={
+function resolve (dir) {
+    return path.join(__dirname,dir)
+}
+
+let config={
     entry:{
         main:'./src/main.js' //执行命令的路径开始
     },
     output:{
-        path:path.join(__dirname,'./dist'),
+        path:resolve('dist'),//__dirname=>当前js文件所在目录的绝对路径:E:\WebstormWorkspace\iview-study01
         filename:'main.js',
         publicPath: 'dist/' //webpack-dev-server在内存中进行打包时生成的静态文件所在的位置,会影响main.js&图片资源
+    },
+    resolve: {
+        extensions: ['.js', '.vue', '.json'],
+        alias: {
+            '@':resolve('src')
+        }
     },
     /*
         和命令行的启动方式进行merge,命令行的参数优先级大

@@ -14,16 +14,32 @@
             <Input placeholder="Input focus" />
         </Poptip>
         <Hello></Hello>
+        <Button @click="change"></Button>
+        <span>{{$t('nav.home')}}</span>
     </div>
 </template>
 <script>
-    import Hello from '../MyView/Hello.vue'//自己定义的组件
+    import Hello from '@/views/MyView/Hello.vue'//自己定义的组件
     export default {
         /*
-            局部注册
+            局部注册:自己定义的组件必须要注册
          */
         components:{
             Hello
+        },
+        data(){
+            return {
+
+            }
+        },
+        methods:{
+            change(){
+                if (this.$i18n.locale === 'zh' ) {
+                    this.$i18n.locale = 'en';//关键语句
+                } else {
+                    this.$i18n.locale = 'zh';//关键语句
+                }
+            }
         }
     }
 </script>
