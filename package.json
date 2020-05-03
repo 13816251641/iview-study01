@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run lint:fix && webpack-dev-server --open --port 9000 --hot --contentBase src",
     "build": "webpack",
-    "lint:fix": "eslint --ext .js,.vue src --fix"
+    "lint:fix": "eslint --ext .js,.vue,.html src --fix"
   },
   "keywords": [],
   "author": "",
