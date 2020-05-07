@@ -34,6 +34,7 @@
         },
         methods:{
             change(){
+                console.log(this.$root.API.SAY_HELLO)
                 let language = '';
 
                 if (this.$i18n.locale === 'zh-CN' ) {

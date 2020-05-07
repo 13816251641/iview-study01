@@ -7,6 +7,7 @@ import Routers from './router.js';
 import ViewUI from 'view-design';
 import 'view-design/dist/styles/iview.css';
 import App from './views/app.vue';
+import {mixin}  from '@/common/api/loadService';
 
 
 /* 插件的使用 */
@@ -41,5 +42,6 @@ new Vue({
     el: '#app',
     router: router,
     i18n:i18n,
+    mixins:[mixin],
     render: h => h(App)
 });
