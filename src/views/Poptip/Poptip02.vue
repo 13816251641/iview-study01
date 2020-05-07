@@ -16,12 +16,16 @@
                 这是我的自定义内容，我想要换行啊换行鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋
                 这是我的自定义内容，我想要换行啊换行鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋
             </div>
-            <Button type="parimary" size="samll">我是提示框啊</Button>
+            <Button type="parimary" size="small" @click="show">我是提示框啊</Button>
         </Poptip>
     </div>
 </template>
 <script>
     export default {
-
+        methods:{
+            show(){
+                //console.log(this.$parent);Poptip02其实是Content组件的子组件,并不是Layout.vue的!!!
+            }
+        }
     }
 </script>

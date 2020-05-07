@@ -86,7 +86,8 @@
     export default {
         data () {
             return {
-                isCollapsed: false
+                isCollapsed: false,
+                name:'Layout'
             }
         },
         computed: {
