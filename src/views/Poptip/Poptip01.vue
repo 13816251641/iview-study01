@@ -14,8 +14,7 @@
             <Input placeholder="Input focus" />
         </Poptip>
         <Hello></Hello>
-        <Button @click="change"></Button>
-        <span>{{$t('nav.home')}}</span>
+
     </div>
 </template>
 <script>
@@ -33,17 +32,7 @@
             }
         },
         methods:{
-            change(){
-                console.log(this.$root.API.SAY_HELLO)
-                let language = '';
 
-                if (this.$i18n.locale === 'zh-CN' ) {
-                    this.$i18n.locale = language = 'en';//关键语句
-                } else {
-                    this.$i18n.locale = language = 'zh-CN';//关键语句
-                }
-                window.localStorage.setItem('language',language);//存储在storage中防止用户刷新界面后语言失效
-            }
         }
     }
 </script>

@@ -69,6 +69,13 @@
                         <MenuItem name="2-1" to="/Layout/Poptip01">Poptip:基础用法</MenuItem>
                         <MenuItem name="2-2" to="/Layout/Poptip02">Poptip:内容换行</MenuItem>
                     </Submenu>
+                    <Submenu name="3">
+                        <template slot="title">
+                            <Icon type="ios-navigate"></Icon>
+                            国际化
+                        </template>
+                        <MenuItem name="3-1" to="/Layout/UseI18nDemo">使用国际化案例</MenuItem>
+                    </Submenu>
                 </Menu>
             </Sider>
             <Layout>
