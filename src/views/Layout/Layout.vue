@@ -76,6 +76,13 @@
                         </template>
                         <MenuItem name="3-1" to="/Layout/UseI18nDemo">使用国际化案例</MenuItem>
                     </Submenu>
+                    <Submenu name="4">
+                        <template slot="title">
+                            <Icon type="ios-navigate"></Icon>
+                            Form表单
+                        </template>
+                        <MenuItem name="3-1" to="/Layout/Form01">Form:表单验证</MenuItem>
+                    </Submenu>
                 </Menu>
             </Sider>
             <Layout>
