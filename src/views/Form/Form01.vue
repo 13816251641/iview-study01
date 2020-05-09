@@ -79,7 +79,7 @@
                         { validator: validatePassCheck, trigger: 'blur' }
                     ],
                     /*
-                       trigger:'change' 在修改后验证
+                       trigger:'change' 在form-item修改后验证
                        age字段必须和model中的字段保持一致
                      */
                     age: [
