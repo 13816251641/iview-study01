@@ -65,6 +65,7 @@
             };
 
             return {
+                msg: 'msg321',
                 formCustom: {
                     passwd: '',
                     passwdCheck: '',
@@ -90,6 +91,7 @@
         methods: {
             handleSubmit (name) {
                 this.$refs[name].validate((valid) => {
+                    console.log(this.msg);
                     if (valid) {
                         this.$Message.success('Success!');
                     } else {
