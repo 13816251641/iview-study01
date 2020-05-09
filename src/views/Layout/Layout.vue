@@ -81,7 +81,14 @@
                             <Icon type="ios-navigate"></Icon>
                             Form表单
                         </template>
-                        <MenuItem name="3-1" to="/Layout/Form01">Form:表单验证</MenuItem>
+                        <MenuItem name="4-1" to="/Layout/Form01">Form:表单验证</MenuItem>
+                    </Submenu>
+                    <Submenu name="5">
+                        <template slot="title">
+                            <Icon type="ios-navigate"></Icon>
+                           使用bootstrap样式
+                        </template>
+                        <MenuItem name="5-1" to="/Layout/UseBootstrap01">引入bootstrap布局</MenuItem>
                     </Submenu>
                 </Menu>
             </Sider>

@@ -1,3 +1,4 @@
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 const  path = require('path');
 
 function resolve (dir) {
@@ -49,7 +50,17 @@ let config={
             },
             {test: /\.js$/, exclude: [/node_modules/], loader: 'babel-loader'}
         ]
-    }
+    },
+    plugins: [
+        // copy custom static assets
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(__dirname, 'static'),//打包的静态资源目录地址
+                to: './static',//打包到dist下面的static
+                ignore: ['.*']
+            }
+        ])
+    ]
 }
 
 module.exports=config;//nodejs中的语法
