@@ -10,6 +10,7 @@ import App from './views/app.vue';
 import {mixin} from '@/common/api/loadService';
 
 
+
 /* 插件的使用 */
 Vue.use(VueI18n)
 Vue.use(VueRouter);

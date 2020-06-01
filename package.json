@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run lint:fix && webpack-dev-server --open --port 9000 --hot --contentBase src",
+    "dev": "cross-env NODE_ENV=develop webpack-dev-server --config webpack.dev.config.js --open --port 9000 --hot --contentBase src",
     "build": "webpack",
     "lint:fix": "eslint --ext .js,.vue,.html src --fix"
   },
@@ -27,6 +27,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "copy-webpack-plugin": "^4.6.0",
+    "cross-env": "^7.0.2",
     "css-loader": "^0.25.0",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^6.2.1",

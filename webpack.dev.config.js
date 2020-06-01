@@ -1,5 +1,12 @@
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-const  path = require('path');
+var webpack = require('webpack');
+const path = require('path');
+
+/*
+    process.env是node中的系统环境变量,又因为webpack属于node中的一个模块
+    因此可以直接使用
+ */
+const NODE_ENV = process.env.NODE_ENV || '';
 
 function resolve (dir) {
     return path.join(__dirname,dir)
@@ -59,7 +66,16 @@ let config={
                 to: './static',//打包到dist下面的static
                 ignore: ['.*']
             }
-        ])
+        ]),
+        new webpack.DefinePlugin({
+            /*
+                1.JSON.stringify一定要加
+                2.process这个前缀不能变,后面的env123无所谓
+             */
+            'process.env': {
+                'NODE_ENV': JSON.stringify(NODE_ENV)
+            }
+        })
     ]
 }
 

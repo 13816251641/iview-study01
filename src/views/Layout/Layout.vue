@@ -90,6 +90,13 @@
                         </template>
                         <MenuItem name="5-1" to="/Layout/UseBootstrap01">引入bootstrap布局</MenuItem>
                     </Submenu>
+                    <Submenu name="6">
+                        <template slot="title">
+                            <Icon type="ios-navigate"></Icon>
+                            Message 全局提示
+                        </template>
+                        <MenuItem name="6-1" to="/Layout/Message01">显示一个10秒的提示</MenuItem>
+                    </Submenu>
                 </Menu>
             </Sider>
             <Layout>
