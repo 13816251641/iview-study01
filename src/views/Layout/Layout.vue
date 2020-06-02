@@ -97,6 +97,14 @@
                         </template>
                         <MenuItem name="6-1" to="/Layout/Message01">显示一个10秒的提示</MenuItem>
                     </Submenu>
+                    <Submenu name="7">
+                        <template slot="title">
+                            <Icon type="ios-navigate"></Icon>
+                            使用Modal
+                        </template>
+                        <MenuItem name="6-1" to="/Layout/Modal01">显示一个简单的Modal</MenuItem>
+                        <MenuItem name="6-2" to="/Layout/Modal02">显示一个自定义页头和页脚的Modal</MenuItem>
+                    </Submenu>
                 </Menu>
             </Sider>
             <Layout>
