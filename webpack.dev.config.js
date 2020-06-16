@@ -71,6 +71,7 @@ let config={
             /*
                 1.JSON.stringify一定要加
                 2.process这个前缀不能变,后面的env123无所谓
+                3.NODE_ENV的key也无所谓,可以任意添加
              */
             'process.env': {
                 'NODE_ENV': JSON.stringify(NODE_ENV)

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=develop webpack-dev-server --config webpack.dev.config.js --open --port 9000 --hot --contentBase src",
+    "test": "cross-env NODE_ENV=test webpack-dev-server --config build/build.js --open --port 9000 --hot --contentBase src",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --config build/build.js --open --port 9000 --hot --contentBase src",
     "build": "webpack",
     "lint:fix": "eslint --ext .js,.vue,.html src --fix"
   },
@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
     "bootstrap": "^3.3.6",
     "jquery": "^3.4.1",
     "view-design": "^4.1.3",
@@ -43,6 +44,7 @@
     "vue-loader": "^14.2.4",
     "vue-template-compiler": "^2.6.11",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.9.3"
+    "webpack-dev-server": "^2.9.3",
+    "webpack-merge": "^4.2.2"
   }
 }
