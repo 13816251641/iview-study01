@@ -15,10 +15,27 @@
                 });
 
 
-                this.http.get('/hello').then(res=>{
+            /*    this.http.get('/hello',{
+                    'name':'wahaha',
+                    'age': 28
+                }).then(res=>{
                     alert(res);
                     console.log(res.data);
-                })
+                }).catch(function (res){ //服务端超时的话会进入catch
+                    console.log('catch');
+                    console.log(res);
+                });*/
+
+                this.http.post('/bye',{
+                    'name':'wahaha',
+                    'age': 28
+                }).then(res=>{
+                    alert(res);
+                    console.log(res.data);
+                }).catch(function (res){ //服务端超时的话会进入catch
+                    console.log('catch-post');
+                    console.log(res);
+                });
             }
         }
     }

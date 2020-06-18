@@ -14,9 +14,16 @@ export default {
     service,
     get(url,data){
         return service({
-            url: url,
             method: 'get',
-            data
+            url: url,
+            params: data //get一定要为params
+        })
+    },
+    post(url,dataObj){
+        return service({
+            method: 'post',
+            url: url,
+            data: dataObj //post要想传参参数名必须是data
         })
     }
 }
