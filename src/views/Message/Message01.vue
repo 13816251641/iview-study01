@@ -3,6 +3,7 @@
         <Button @click="time">Displays a 10 second prompt</Button>
         <Button @click="useGet">get</Button>
         <Button @click="usePost">post</Button>
+        <el-button type="danger">危险按钮</el-button>
     </div>
 </template>
 
@@ -10,13 +11,16 @@
     export default {
         methods:{
             useGet(){
+
+                alert(this.lujieni);
+
                 this.http.get('/hello',{
                     'name':'wahaha',
                     'age': 28
                 }).then(res=>{
                     alert(res);
                     console.log(res.data);
-                }).catch(function (res){ //服务端超时的话会进入catch
+                }).catch(function (res){ //服务端超时、服务端没启动的话都会进入catch
                     console.log('catch');
                     console.log(res);
                 });

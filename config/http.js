@@ -47,14 +47,11 @@ service.interceptors.response.use(
         return Promise.reject();
 
     },
+     /*
+        后端程序没启动会进这里
+      */
     error => {
-        console.log('err' + error);// for debug
-        Message({
-            message: error.message,
-            type: 'error',
-            duration: 3 * 1000,
-            showClose: true
-        });
+        console.log('err520' + error);// for debug
         return Promise.reject(error);
     }
 );
