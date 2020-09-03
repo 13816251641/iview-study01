@@ -11,12 +11,26 @@ import 'element-ui/lib/theme-chalk/index.css';
 import App from './views/app.vue';
 import {mixin} from '@/common/api/loadService';
 import http from '../config/http.js'   //axios实例化后引入取名http
-import Vuex from 'vuex'
+import Vuex from 'vuex';
+import $ from 'jquery'
 
 
-Vue.prototype.http = http   //放入全局
+Vue.prototype.http = http;   //放入全局
 
 Vue.prototype.lujieni='happy';
+
+Vue.prototype.$excelRequest = function (reqUrl, params) {
+    let myform = $('<form></form>');
+    myform.attr('method', 'post')
+    myform.attr('action', reqUrl);
+    for (let key in params) {
+        // 要维持value="123" 这样的语法格式
+        myform.append('<input type="hidden" name="' + key + '" value="' + params[key] + '" />');
+    }
+    /* appendTo->body这一步不可少 */
+    myform.appendTo('body').submit();
+    myform.remove();//删除form元素
+}
 
 
 /* 插件的使用 */
@@ -26,11 +40,6 @@ Vue.use(ViewUI);
 Vue.use(ElementUI);
 Vue.use(Vuex);
 
-
-/*
-    import {arrow} from "./arrow.js";
-    arrow();//abcd
-*/
 
 /* The routing configuration */
 const RouterConfig = {

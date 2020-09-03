@@ -5,6 +5,7 @@
         <Button @click="usePost">post</Button>
         <Button @click="useVuex">使用Vuex</Button>
         <Button @click="useVuex">使用watch关键字</Button>
+        <Button @click="useExport">导出数据</Button>
         <input type="text" v-model="form.msg">
         <el-button type="danger">危险按钮</el-button>
     </div>
@@ -32,13 +33,10 @@
                 console.log(doneTodos);
             },
             useGet(){
-                alert(this.lujieni);
-
                 this.http.get('/hello',{
                     'name':'wahaha',
                     'age': 28
                 }).then(res=>{
-                    alert(res);
                     console.log(res.data);
                 }).catch(function (res){ //服务端超时、服务端没启动的话都会进入catch
                     console.log('catch');
@@ -66,6 +64,15 @@
                     duration: 10,
                     closable: true
                 });
+            },
+            useExport(){
+                let param = {
+                    name: 'zhangsan',
+                    age: 24
+                }
+                /* $excelRequest是post请求方式 */
+                this.$excelRequest('http://localhost:8080/vue/export', param);
+
             }
         }
     }
