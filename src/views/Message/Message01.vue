@@ -3,15 +3,35 @@
         <Button @click="time">Displays a 10 second prompt</Button>
         <Button @click="useGet">get</Button>
         <Button @click="usePost">post</Button>
+        <Button @click="useVuex">使用Vuex</Button>
+        <Button @click="useVuex">使用watch关键字</Button>
+        <input type="text" v-model="form.msg">
         <el-button type="danger">危险按钮</el-button>
     </div>
 </template>
 
 <script>
     export default {
+        data(){
+            return {
+                form:{
+                    msg:'hello'
+                }
+            }
+        },
+        watch:{
+            'form.msg'(c){
+                console.log(c);
+            }
+        },
         methods:{
+            useVuex(){
+                this.$store.commit('increment');
+                alert(this.$store.state.count); // -> 1
+                let doneTodos = this.$store.getters.doneTodos;
+                console.log(doneTodos);
+            },
             useGet(){
-
                 alert(this.lujieni);
 
                 this.http.get('/hello',{
@@ -46,8 +66,6 @@
                     duration: 10,
                     closable: true
                 });
-
-
             }
         }
     }
