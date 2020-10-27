@@ -4,12 +4,10 @@
         在 Form 内,每个表单域由 FormItem 组成, 需要给 Form 设置 label-width 后才能给 FormItem
         设置属性 label 可以显示表单域的标签;
 
-        prop对应表单域 model 里的字段,如果不设置resetFields将会没有效果,同时表单验证也需要prop的支持;
+        prop对应表单域 model 里的字段,如果不设置的话resetFields将会没有效果,同时表单验证也需要prop的支持;
 
 
      -->
-
-
     <Form ref="formCustom" :model="formCustom" :rules="ruleCustom" :label-width="80">
         <FormItem label="Password" prop="passwd">
             <Input type="password" v-model="formCustom.passwd"></Input>
@@ -17,7 +15,7 @@
         <FormItem label="Confirm" prop="passwdCheck">
             <Input type="password" v-model="formCustom.passwdCheck"></Input>
         </FormItem>
-        <FormItem label="Age" prop="age">
+        <FormItem label="Age" prop="age" v-if="false">
             <Input type="text" v-model="formCustom.age" number></Input>
         </FormItem>
         <FormItem>
@@ -27,6 +25,9 @@
     </Form>
 </template>
 <script>
+
+    import * as cookieUtil from '@/common/utils/cookie'
+
     export default {
         data () {
             const validatePass = (rule, value, callback) => {
@@ -90,6 +91,9 @@
         },
         methods: {
             handleSubmit (name) {
+                //alert(this.$getCookie('embedIsid'));
+                alert(cookieUtil.hello());
+                //alert(cookieUtil.usageCookie.getCookie('embedIsid'));
                 this.$refs[name].validate((valid) => {
                     console.log(this.msg);
                     if (valid) {
@@ -102,6 +106,9 @@
             handleReset (name) {
                 this.$refs[name].resetFields();//重置
             }
+        },
+        mounted() {
+            this.$setCookie('embedIsid', '110', {})  //7551383157312357  3160870398528427
         }
     }
 </script>

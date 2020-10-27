@@ -12,12 +12,14 @@ import App from './views/app.vue';
 import {mixin} from '@/common/api/loadService';
 import http from '../config/http.js'   //axios实例化后引入取名http
 import Vuex from 'vuex';
-import $ from 'jquery'
+import $ from 'jquery';
+import * as cookieUtils from '@/common/utils/cookie';
 
 
 Vue.prototype.http = http;   //放入全局
 
 Vue.prototype.lujieni='happy';
+Vue.use(cookieUtils.default); //cookie操作
 
 Vue.prototype.$excelRequest = function (reqUrl, params) {
     let myform = $('<form></form>');
