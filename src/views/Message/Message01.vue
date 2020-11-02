@@ -8,11 +8,19 @@
         <Button @click="useExport">导出数据</Button>
         <input type="text" v-model="form.msg">
         <el-button type="danger">危险按钮</el-button>
+
+        <Child></Child>
     </div>
 </template>
 
 <script>
+
+    import Child from '@/components/Form/Child'
+
     export default {
+        components:{
+            Child
+        },
         data(){
             return {
                 form:{
