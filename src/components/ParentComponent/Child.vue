@@ -16,7 +16,7 @@
         },
         methods:{
             click(){
-                this.$emit('change','change321')
+                this.$emit('change','change321');//重要
             }
         },
         mounted() {
