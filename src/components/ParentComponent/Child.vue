@@ -1,6 +1,6 @@
 <template>
     <div>
-        {{message}} <Button @click="click">点我啊</Button>
+        {{message}} <Button @click="click">点我啊123</Button>
     </div>
 </template>
 

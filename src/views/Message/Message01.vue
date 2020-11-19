@@ -15,12 +15,9 @@
 
 <script>
 
-    import Child from '@/components/Form/Child'
 
     export default {
-        components:{
-            Child
-        },
+        name: 'Message01',
         data(){
             return {
                 form:{

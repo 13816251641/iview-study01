@@ -4,6 +4,15 @@
           在 Form 内,每个表单域由 FormItem 组成, 需要给 Form 设置 label-width 后才能给 FormItem
           设置属性 label 可以显示表单域的标签;
           prop对应表单域 model 里的字段,如果不设置的话resetFields将会没有效果,同时表单验证也需要prop的支持;
+
+          v-if修饰的字段即使配置了校验如果不可见也不会进行校验
+          v-show修饰的字段如果配置了校验如果不可见也会进行校验
+          :style="{display:display}"修饰的字段如果配置了校验如果不可见也会进行校验
+
+
+          this.ruleCustom.age[0].required = false; 只是不会进行非空校验,后面如果配置了业务校验的话仍旧会执行,
+          只不过字段上的非空红点不会消失
+
         -->
         <Form ref="formCustom" :model="formCustom" :rules="ruleCustom" :label-width="80">
             <FormItem label="Password" prop="passwd">
@@ -12,16 +21,21 @@
             <FormItem label="Confirm" prop="passwdCheck">
                 <Input type="password" v-model="formCustom.passwdCheck"></Input>
             </FormItem>
-            <FormItem label="Age" prop="age" v-if="false">
-                <Input type="text" v-model="formCustom.age" number></Input>
+            <!--v-show="this.flag"-->
+            <FormItem label="Age" prop="age" :style="{display:display}">
+                <Input type="text" v-model="formCustom.age"></Input>
+            </FormItem>
+            <FormItem label="Name" prop="name">
+                <Input type="text" v-model="formCustom.name"></Input>
             </FormItem>
             <FormItem>
                 <Button type="primary" @click="handleSubmit('formCustom')">Submit</Button>
                 <Button @click="handleReset('formCustom')" style="margin-left: 8px">Reset</Button>
             </FormItem>
         </Form>
-        <!--调用子组件-->
-        <Child ref="child" @change="change"></Child>
+
+
+        <Button @click="change"></Button>
     </div>
 
 
@@ -31,12 +45,9 @@
 
     import * as cookieUtil from '@/common/utils/cookie'
 
-    import Child from '@/components/Form/Child.vue'
 
     export default {
-        components: {
-            Child
-        },
+        name: 'Form01',
         data () {
             const validatePass = (rule, value, callback) => {
                 if (value === '') {
@@ -64,21 +75,22 @@
                     callback(new Error('Age cannot be empty'));//callback中要包含Error之后要return
                     return;
                 }
-                if (!Number.isInteger(value)) {
-                    callback(new Error('Please enter a numeric value'));
-                } else if (value < 18) {
-                    callback(new Error('Must be over 18 years of age'));
-                } else {
+                if (value === '2003') {
                     callback();
+                } else {
+                    callback(new Error('Age not equals to 2003'));
                 }
             };
 
             return {
+                display: 'block',
                 msg: 'msg321',
+                flag: true,
                 formCustom: {
                     passwd: '',
                     passwdCheck: '',
-                    age: ''
+                    age: '',
+                    name:''
                 },
                 ruleCustom: {
                     passwd: [
@@ -88,22 +100,36 @@
                         { validator: validatePassCheck, trigger: 'blur' }
                     ],
                     /*
-                       trigger:'change' 在form-item修改后验证
-                       age字段必须和model中的字段保持一致
-                     */
+                        required和validator组合使用
+                        require负责界面标红,和非空校验
+                        validateAge负责业务上的校验
+                        这样的写法,会先校验非空,非空成功后再去进行业务校验
+                    */
                     age: [
-                        { validator: validateAge, trigger: 'change' }
+                        {required:true,trigger:'blur',message: 'age must has value'},
+                        {trigger:'blur',validator:validateAge}
+                    ],
+                    /*
+                       name字段必须和model中的字段保持一致
+                     */
+                    name: [
+                        {required: true, message: '哈哈', trigger: 'blur'}
                     ]
                 }
             }
         },
         methods: {
-            change(content){
-                alert(content);
+            change(){
+                this.flag = false;
+                if (this.display === 'none'){
+                    this.display = 'block'
+                } else {
+                    this.display = 'none'
+                }
+                //this.ruleCustom.age[0].required = false;
             },
             handleSubmit (name) {
                 //alert(this.$getCookie('embedIsid'));
-                alert(cookieUtil.hello());
                 //alert(cookieUtil.usageCookie.getCookie('embedIsid'));
                 this.$refs[name].validate((valid) => {
                     console.log(this.msg);

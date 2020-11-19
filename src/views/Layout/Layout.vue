@@ -102,8 +102,15 @@
                             <Icon type="ios-navigate"></Icon>
                             使用Modal
                         </template>
-                        <MenuItem name="6-1" to="/Layout/Modal01">显示一个简单的Modal</MenuItem>
-                        <MenuItem name="6-2" to="/Layout/Modal02">显示一个自定义页头和页脚的Modal</MenuItem>
+                        <MenuItem name="7-1" to="/Layout/Modal01">显示一个简单的Modal</MenuItem>
+                        <MenuItem name="7-2" to="/Layout/Modal02">显示一个自定义页头和页脚的Modal</MenuItem>
+                    </Submenu>
+                    <Submenu name="8">
+                        <template slot="title">
+                            <Icon type="ios-navigate"></Icon>
+                            父子组件使用
+                        </template>
+                        <MenuItem name="8-1" to="/Layout/Parent">父组件使用子组件</MenuItem>
                     </Submenu>
                 </Menu>
             </Sider>
