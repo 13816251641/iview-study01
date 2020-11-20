@@ -7,6 +7,7 @@ import UseBootstrap01 from '@/views/Bootstrap/UseBootstrap01.vue';
 import Message01 from '@/views/Message/Message01.vue';
 import Modal01 from  '@/views/Modal/Modal01.vue';
 import Modal02 from  '@/views/Modal/Modal02.vue';
+import UseCss01 from  '@/views/UseCss/UseCss01.vue';
 import Parent from  '@/views/ParentComponent/Parent.vue';
 
 
@@ -30,7 +31,8 @@ const routers = [
             {path:'Message01',component:Message01},
             {path:'Modal01',component:Modal01},
             {path:'Modal02',component:Modal02},
-            {path:'Parent',component:Parent}
+            {path:'Parent',component:Parent},
+            {path:'UseCss01',component:UseCss01}
         ]
     }
 ];

@@ -112,6 +112,13 @@
                         </template>
                         <MenuItem name="8-1" to="/Layout/Parent">父组件使用子组件</MenuItem>
                     </Submenu>
+                    <Submenu name="9">
+                        <template slot="title">
+                            <Icon type="ios-navigate"></Icon>
+                            使用样式
+                        </template>
+                        <MenuItem name="8-1" to="/Layout/UseCss01">动态修改样式</MenuItem>
+                    </Submenu>
                 </Menu>
             </Sider>
             <Layout>
