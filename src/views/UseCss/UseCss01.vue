@@ -23,7 +23,7 @@
     }
 </script>
 
-<style>
+<style lang="scss" scoped>
     .myOrangeColor{
         background-color:#ff6c0c;
         color:#fff;
