@@ -1,6 +1,7 @@
 <template>
     <div>
         <Button @click="time">Displays a 10 second prompt</Button>
+        <Button @click="useFormatTime">格式化时间并输出</Button>
         <Button @click="useGet">get</Button>
         <Button @click="usePost">post</Button>
         <Button @click="useVuex">使用Vuex</Button>
@@ -8,13 +9,18 @@
         <Button @click="useExport">导出数据</Button>
         <input type="text" v-model="form.msg">
         <el-button type="danger">危险按钮</el-button>
-
         <Child></Child>
     </div>
 </template>
 
 <script>
+    /*
+        精确使用
+        import {parseTime,showName} from '@/common/utils';
 
+        import * as utils from '@/common/utils';
+    */
+    import * as utils from 'common/utils';
 
     export default {
         name: 'Message01',
@@ -31,6 +37,12 @@
             }
         },
         methods:{
+            useFormatTime(){
+                //console.log(typeof new Date() === 'object');//true
+                //console.log(utils.a);//abc
+                //utils.showName('lujieni');//showName:lujieni
+                alert(utils.parseTime(new Date(),'{y}-{m}-{d} {h}:{i}:{s}'));
+            },
             useVuex(){
                 this.$store.commit('increment');
                 alert(this.$store.state.count); // -> 1
