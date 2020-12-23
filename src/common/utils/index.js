@@ -11,7 +11,6 @@ export function parseTime(time, cFormat) {
     if (typeof time === 'object') {
         date = time;
     } else {
-        // eslint-disable-next-line radix
         date = new Date(parseInt(time));
     }
     const formatObj = {
@@ -22,7 +21,6 @@ export function parseTime(time, cFormat) {
         i: date.getMinutes(),
         s: date.getSeconds()
     };
-    // eslint-disable-next-line camelcase
     const time_str = format.replace(/{(y|m|d|h|i|s)+}/g, (result, key) => {
         let value = formatObj[key];
         if (result.length > 0 && value < 10) {
@@ -30,7 +28,6 @@ export function parseTime(time, cFormat) {
         }
         return value || 0;
     });
-    // eslint-disable-next-line camelcase
     return time_str;
 }
 

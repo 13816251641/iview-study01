@@ -104,6 +104,7 @@ export const usageCookie = {
    * @param pros  过期时间,数字或JS Date
    */
     setCookie(key, value, pros){
+      // eslint-disable-next-line no-undefined
         if (key === undefined || value === undefined) {
             console.error('The key or value of the cookie cannot be empty! ')
             return

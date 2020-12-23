@@ -12,7 +12,7 @@ module.exports = {
         为了兼容性考虑基本都使用babel插件对代码进行编译。而用babel编译后的代码使用 babel-eslint
         这款解析器可以避免不必要的麻烦。
      */
-    parser: 'babel-eslint',
+    parser: 'babel-eslint', //babel-eslint替换默认解析器,让ESLint成为率先支持ES2016语法的lint工具。
     parserOptions: {
         sourceType: 'module'//设置"script"（默认）或"module"如果你的代码是在ECMAScript中的模块。
     },
@@ -23,9 +23,9 @@ module.exports = {
     env: {
         browser: true,
     },
-    extends: ['standard'],
+    extends: ['standard'],//继承第三方的规范 eslint-plugin-standard
     plugins: [
-        'html' //开启对.vue格式文件中的规范校验
+        'html' //开启对.vue格式文件中的规范校验  eslint-plugin-html
     ],
     rules : {
         // 定义对象的set存取器属性时，强制定义get
@@ -193,7 +193,7 @@ module.exports = {
         "block-scoped-var": 0,//块语句中使用var
         "brace-style": [1, "1tbs"],//大括号风格
         "callback-return": 1,//避免多次调用回调什么的
-        "camelcase": 2,//强制驼峰法命名
+        "camelcase": 0,//强制驼峰法命名
         "comma-dangle": [2, "never"],//对象字面量项尾不能有逗号
         "comma-spacing": 0,//逗号前后的空格
         "comma-style": [2, "last"],//逗号风格，换行时在行首还是行尾
@@ -237,7 +237,7 @@ module.exports = {
         "prefer-reflect": 0,//首选Reflect的方法
         "quotes": [2, "single"],//引号类型 `` "" ''
         "quote-props":[0, "always"],//对象字面量中的属性名是否强制双引号
-        "radix": 2,//parseInt必须指定第二个参数
+        "radix": 1,//parseInt必须指定第二个参数
         "id-match": 0,//命名检测
         "require-yield": 0,//生成器函数必须有yield
         "semi": [0, "always"],//语句强制分号结尾
