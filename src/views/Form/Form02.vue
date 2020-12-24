@@ -41,6 +41,7 @@
                     imgStr:this.uploadFileResult[0].imgStr,
                     fileName:this.uploadFileResult[0].fileName
                 }).then(res=>{
+                    debugger;
                     console.log(res);
                 });
             },

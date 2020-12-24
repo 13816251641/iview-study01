@@ -19,8 +19,8 @@ service.interceptors.request.use(config => {
     let token = Cookies.get('inner-token');
     if (token){
         headers['token'] = token;
+        config.headers = headers;//这里会覆盖service中的headers
     }
-    config.headers = headers;//这里会覆盖service中的headers
     return config;
 }, error => {
     // Do something with request error
@@ -42,7 +42,7 @@ service.interceptors.response.use(
             if (data.errorCode === '302'){ //清除session,返回到百度
                 window.location.href = 'http://www.baidu.com';
             }
-            return Promise.resolve(response.data);//程序ok,将结果返回给前端
+            return Promise.resolve(response.data);//程序ok,将结果返回给前端调用接口页面
         }
         return Promise.reject();
 
