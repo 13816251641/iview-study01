@@ -12,7 +12,7 @@ module.exports = {
         为了兼容性考虑基本都使用babel插件对代码进行编译。而用babel编译后的代码使用 babel-eslint
         这款解析器可以避免不必要的麻烦。
      */
-    parser: 'babel-eslint', //babel-eslint替换默认解析器,让ESLint成为率先支持ES2016语法的lint工具。
+    parser: 'babel-eslint', //使用babel-eslint替换默认解析器,让ESLint成为率先支持ES2016语法的lint工具。
     parserOptions: {
         sourceType: 'module'//设置"script"（默认）或"module"如果你的代码是在ECMAScript中的模块。
     },
