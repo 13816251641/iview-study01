@@ -82,6 +82,7 @@
                             Form表单
                         </template>
                         <MenuItem name="4-1" to="/Layout/Form01">Form:表单验证</MenuItem>
+                        <MenuItem name="4-2" to="/Layout/Form02">Form:图片上传</MenuItem>
                     </Submenu>
                     <Submenu name="5">
                         <template slot="title">

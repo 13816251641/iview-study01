@@ -25,7 +25,7 @@ module.exports = {
     },
     extends: ['standard'],//继承第三方的规范 eslint-plugin-standard
     plugins: [
-        'html' //开启对.vue格式文件中的规范校验  eslint-plugin-html
+        'html' //开启对.vue格式文件中的规范校验的支持  eslint-plugin-html
     ],
     rules : {
         // 定义对象的set存取器属性时，强制定义get

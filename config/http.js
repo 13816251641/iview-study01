@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 
 
 let service = axios.create({
-    baseURL: 'http://localhost:8080/vue/',
+    baseURL: 'http://localhost:8080/',
     withCredentials: true,//允许携带cookie,不加无法传输cookie
     timeout: 5000,
     headers: {
