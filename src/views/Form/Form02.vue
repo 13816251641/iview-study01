@@ -41,15 +41,13 @@
                     imgStr:this.uploadFileResult[0].imgStr,
                     fileName:this.uploadFileResult[0].fileName
                 }).then(res=>{
-                    debugger;
                     console.log(res);
                 });
             },
             readFileData(file,list){
                 //获取文件信息
-                //debugger;
                 let reader = new FileReader();
-                reader.readAsDataURL(file.raw);//FileReader使用base64编码图片
+                reader.readAsDataURL(file.raw);//FileReader使用base64编码图片 这里使用的是file.raw很重要
                 reader.onload = function (e) {
                     let res = {
                         fileName : file.name,
@@ -63,7 +61,9 @@
                 this.fileList = [];
             },
             /*
-                组件本地上传成功后的回调,文件上传数量超标不会回调
+                组件本地上传成功后的回调
+                文件上传数量超标不会回调
+                文件删除不会回调
             */
             uploadSingleFileChange(file,fileList){
                 console.log(file);

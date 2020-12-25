@@ -58,7 +58,6 @@ service.interceptors.response.use(
 
 
 export default {
-    service,
     get(url,data){
         return service({
             method: 'get',
