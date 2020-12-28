@@ -74,8 +74,9 @@
                 });
             },
             time(){
+                console.log(process);
                 console.log(process.env);
-                console.log(process.env123);
+                console.log(process.hello);
                 this.$Message.info({
                     content: 'I will be gone in 10 seconds',
                     duration: 10,

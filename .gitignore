@@ -29,7 +29,6 @@ mvnw.cmd
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
 /node_modules
 
 ### VS Code ###

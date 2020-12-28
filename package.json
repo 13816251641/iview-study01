@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test webpack-dev-server --config build/build.js --open --port 9000 --hot --contentBase src",
-    "dev": "cross-env NODE_ENV=dev webpack-dev-server --config build/build.js --open --port 9000 --hot --contentBase src",
+    "dev": "cross-env name=lujieni webpack-dev-server --config build/build.js --open --port 9000 --hot --contentBase src",
     "build": "webpack",
     "lint:fix": "eslint --ext .js,.vue,.html src --fix"
   },
