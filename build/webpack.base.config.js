@@ -5,9 +5,9 @@ const path = require('path');
 
 /*
     process.env是node中的系统环境变量,又因为webpack属于node中的一个模块
-    因此可以直接使用
+    因此可以直接使用,package.json中的NODE_ENV是nodejs给我们指定的,不能替换
  */
-const name = process.env.name || '';
+const name = process.env.NODE_ENV || '';
 
 function resolve (dir) {
     /*
@@ -80,12 +80,12 @@ let config={
         new webpack.DefinePlugin({
             /*
                 1.JSON.stringify一定要加
-                2.process这个前缀不能变,后面的env123无所谓
+                2.process这个前缀不能变,后面的hello无所谓
                 3.NODE_ENV这个key也无所谓,可以任意添加
                 webpackMerge不会替换base同名的配置!!!
              */
             'process.hello': {
-                'NODE_ENV': JSON.stringify(name)
+                'hiv': JSON.stringify(name)
             }
         })
     ]
