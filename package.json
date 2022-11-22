@@ -33,7 +33,7 @@
     "babel-preset-env": "^1.7.0",
     "copy-webpack-plugin": "^4.6.0",
     "cross-env": "^7.0.2",
-    "css-loader": "^0.25.0",
+    "css-loader": "^6.7.2",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-friendly-formatter": "^3.0.0",
@@ -48,7 +48,7 @@
     "url-loader": "^0.6.2",
     "vue-loader": "^14.2.4",
     "vue-template-compiler": "^2.6.11",
-    "webpack": "^2.6.1",
+    "webpack": "^5.75.0",
     "webpack-dev-server": "^2.9.3",
     "webpack-merge": "^4.2.2"
   }
